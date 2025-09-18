@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script type="module" src="index.js"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="app-container">
+        <aside id="sidebar">
+            <header>
+                <h1><i class="fa-solid fa-briefcase"></i> <span class="sidebar-text">Gestor</span></h1>
+            </header>
+            <div class="search-container">
+                <i class="fa-solid fa-search"></i>
+                <input type="search" id="global-search" class="sidebar-text" placeholder="Busca global...">
+            </div>
+            <nav>
+                <ul>
+                    <li><button data-screen="painel" class="nav-btn active"><i class="fa-solid fa-chart-pie"></i> <span class="sidebar-text">Painel</span></button></li>
+                    <li><button data-screen="financas" class="nav-btn"><i class="fa-solid fa-dollar-sign"></i> <span class="sidebar-text">Finanças</span></button></li>
+                    <li><button data-screen="vendas" class="nav-btn"><i class="fa-solid fa-tags"></i> <span class="sidebar-text">Vendas</span></button></li>
+                    <li><button data-screen="relatorios" class="nav-btn"><i class="fa-solid fa-file-alt"></i> <span class="sidebar-text">Relatórios</span></button></li>
+                    <li><button data-screen="historico" class="nav-btn"><i class="fa-solid fa-clock-rotate-left"></i> <span class="sidebar-text">Histórico</span></button></li>
+                    <li><button data-screen="manual" class="nav-btn"><i class="fa-solid fa-book"></i> <span class="sidebar-text">Manual</span></button></li>
+                </ul>
+            </nav>
+            <footer>
+                <div class="backup-actions sidebar-text">
+                    <button id="save-backup-btn"><i class="fa-solid fa-download"></i> Salvar Backup</button>
+                    <button id="load-backup-btn"><i class="fa-solid fa-upload"></i> Carregar Backup</button>
+                    <input type="file" id="backup-file-input" style="display: none;" accept=".json">
+                </div>
+                <div class="credits sidebar-text">
+                    <p>Desenvolvido por @DesenvolTho</p>
+                    <p>desenvoltho@gmail.com</p>
+                </div>
+            </footer>
+        </aside>
+        <main id="main-content">
+            <!-- Content will be rendered here by TypeScript -->
+        </main>
+    </div>
+    <div id="modal-container" class="hidden">
+        <div id="modal-content">
+            <!-- Modal content will be injected here -->
+        </div>
+    </div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
