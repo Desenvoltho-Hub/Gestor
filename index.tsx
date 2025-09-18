@@ -378,7 +378,7 @@ class GestorApp {
                         <label for="tx-description">Descrição</label>
                         <input type="text" id="tx-description" required value="${editingTx?.description || ''}">
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                    <div class="form-grid-3-cols">
                         <div class="form-group">
                             <label for="tx-amount">Valor</label>
                             <input type="number" id="tx-amount" step="0.01" required value="${editingTx ? Math.abs(editingTx.amount) : ''}">
@@ -395,7 +395,7 @@ class GestorApp {
                             <input type="date" id="tx-date" required value="${editingTx?.date || new Date().toISOString().slice(0, 10)}">
                         </div>
                     </div>
-                    <div id="tx-form-buttons">
+                    <div id="tx-form-buttons" class="form-actions">
                         <button type="submit" class="btn btn-primary">${this.editingTransactionId ? 'Salvar Alterações' : 'Adicionar'}</button>
                         ${this.editingTransactionId ? '<button type="button" id="cancel-edit-btn" class="btn btn-secondary">Cancelar</button>' : ''}
                     </div>
@@ -631,7 +631,7 @@ class GestorApp {
             ${header}
             <div class="card" style="margin-bottom: 1.5rem;">
                 <h3>Configuração do Relatório</h3>
-                <form id="report-form" style="display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 1rem; align-items: end;">
+                <form id="report-form" class="report-form">
                     <div class="form-group">
                         <label for="report-type">Tipo de Relatório</label>
                         <select id="report-type">
@@ -653,7 +653,7 @@ class GestorApp {
             <div id="report-results" class="card" style="display: none;">
                 <h3>Resultados</h3>
                 <div id="report-actions" style="text-align: right; margin-bottom: 1rem;"></div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="report-grid">
                     <div id="report-text-analysis"></div>
                     <div id="report-chart-container"><canvas id="report-chart"></canvas></div>
                 </div>
